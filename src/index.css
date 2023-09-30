@@ -5,8 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #141E46;
+  color: white;
+}
+.table{
+  display: inline-block;
+  overflow: scroll;
 }
 
+h1 {
+  font-weight: 900;
+}
+.btn{
+  background-color: #FFF5E0;
+}
+.listeCat{
+  width: 24%;
+}
+.listeCat:hover{
+  background-color: #e3dbc7;
+  border-radius: 5px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
