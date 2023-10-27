@@ -1,14 +1,17 @@
-export default function Product({ product }) {
-    return <>
-        <tr>
-            <td key={product.key}>{product.id}</td>
-            <td>{product.title}</td>
-            <td>{product.price}</td>
-            <td>{product.description}</td>
-            <td>{product.category}</td>
-            <td><img className="w-75" src={product.image} alt="" /></td>
-            <td>{product.rating.rate}</td>
-            <td>{product.rating.count}</td>
-        </tr>
-    </>
+import Button from "./Button";
+export default function Product(props) {
+
+    return (
+        <div className="card">
+            <div className="imgBox">
+                <img src={props.img} alt="imgProduct" className="imgProd" />
+            </div>
+            <div className="contentBox">
+                <h3>{props.title}</h3>
+                <h2 className="price">{props.price} €</h2>
+                <h4 className="rate">{props.rate}<i className="fa-solid fa-star"></i></h4>
+                <Button name="Details" />
+            </div>
+        </div>
+    );
 }

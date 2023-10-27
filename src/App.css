@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Istok Web", sans-serif;
+}
+
+body {
+    background: #A0E9FF;
+}
+
+.card {
+    position: relative;
+    width: 230px;
+    height: 350px;
+    background: #89CFF3;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 50vh;
+    background: #00A9FF;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+
+.card::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6em;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.card .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+    height: 45%;
+}
+
+.card .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.card .contentBox h3 {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .rate {
+    font-size: 20px;
+    color: white;
+
+}
+
+.fa-star {
+    color: #ffff00;
+}
+
+.buy {
+    position: relative;
+    padding: 10px 30px;
+    color: #000000;
+    text-decoration: none;
+    background: #00A9FF;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    border: 3px solid #89CFF3;
+}
+
+.imgProd {
+    width: 66%;
+  height: 100%;
+}
+
+/* css products */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* css Nav */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 40px;
+}
+
+nav .divCat {
+    display: flex;
+    gap: 20px;
+}
+
+nav .divSearch {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+nav .divSearch input {
+    height: 45px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: transparent;
+    color: black;
+    border: 4px solid #89CFF3 ;
+}
