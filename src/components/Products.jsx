@@ -15,16 +15,6 @@ export default function Products(props) {
     const getCat = (data) => {
         setCategory(data)
     }
-    // display all products
-    // const displayCat = products.map((cat) => {
-    //     return <Product title={cat.title.substring(0, 10)} price={cat.price} rate={cat.rating.rate} img={cat.image} />
-    // })
-    // display products by selected category
-    // const CatSelected = products.filter((val) => {
-    //     return val.category === category
-    // }).map((valCat) => {
-    //     return <Product title={valCat.title.substring(0, 10)} price={valCat.price} rate={valCat.rating.rate} img={valCat.image} />
-    // })
     // display products by search
     const [searchInput, setSearchInput] = useState("")
     const getSearchValue = (data) => {
@@ -40,11 +30,12 @@ export default function Products(props) {
         // Map and display products
         return productsBySearch.map((product) => (
             <Product
-                key={product.id} // Make sure each item has a unique key when rendering in React
+                key={product.id} 
                 title={product.title.substring(0, 10)}
                 price={product.price}
                 rate={product.rating.rate}
                 img={product.image}
+                id={product.id}
             />
         ));
     }
