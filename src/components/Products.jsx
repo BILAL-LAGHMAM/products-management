@@ -3,6 +3,7 @@ import Product from "./Product";
 import Nav from "./Nav";
 import { useEffect } from "react";
 export default function Products(props) {
+
     // initial value of products
     const [products, setProducts] = useState([]);
     // fetch of products
@@ -30,7 +31,7 @@ export default function Products(props) {
         // Map and display products
         return productsBySearch.map((product) => (
             <Product
-                key={product.id} 
+                key={product.id}
                 title={product.title.substring(0, 10)}
                 price={product.price}
                 rate={product.rating.rate}
@@ -41,10 +42,14 @@ export default function Products(props) {
     }
     return (
         <>
-            <Nav sendCat={getCat} sendSearch={getSearchValue} />
-            <section className="products">
-                {displayProducts()}
-            </section>
+            <section class="py-5 container">
+                <Nav sendCat={getCat} sendSearch={getSearchValue} />
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        {displayProducts()}
+                    </div>
+                </div>
+            </section >
         </>
     );
 }

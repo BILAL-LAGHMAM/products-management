@@ -1,20 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 import Products from './components/Products';
-import Nav from './components/Nav';
-import { Routes, BrowserRouter, Route } from "react-router-dom"
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import SingleProduct from './components/SingleProduct';
 import Card from './components/Card';
+import React, { useState, createContext } from 'react';
+import NavBar from './components/NavBar';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+export const AddToCardProduct = createContext();
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
+        <Header/>
         <Routes>
           <Route path='/' element={<Products />} />
           <Route path='/SingleProduct/:id' element={<SingleProduct />} />
-          <Route path='/SingleProduct/:id/Card/:id' element={<Card />} />
+          <Route path='/Card' element={<Card />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

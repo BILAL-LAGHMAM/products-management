@@ -1,12 +1,16 @@
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Card() {
-    const {id} = useParams()
-    console.log(id)
+    const state = useSelector(state => state.Card)
     return (
-        <>
+        <div>
             <h1>Card</h1>
-            {id}
-        </>
-    )
+            {
+                state.map(val => {
+                    return <p>Selected Products: {val.id}: {val.title} {val.price * val.quantity}$ </p>
+                })
+            }
+        </div>
+    );
 }
