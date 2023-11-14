@@ -15,7 +15,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <Header/>
         <Routes>
           <Route path='/' element={<Products />} />
           <Route path='/SingleProduct/:id' element={<SingleProduct />} />

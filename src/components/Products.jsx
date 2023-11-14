@@ -2,6 +2,7 @@ import { useState } from "react";
 import Product from "./Product";
 import Nav from "./Nav";
 import { useEffect } from "react";
+import Header from "./Header";
 export default function Products(props) {
 
     // initial value of products
@@ -42,6 +43,7 @@ export default function Products(props) {
     }
     return (
         <>
+            <Header title="Shop" desc="This Shop Home Page" />
             <section class="py-5 container">
                 <Nav sendCat={getCat} sendSearch={getSearchValue} />
                 <div class="container px-4 px-lg-5 mt-5">

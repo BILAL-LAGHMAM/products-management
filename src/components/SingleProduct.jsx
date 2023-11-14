@@ -14,14 +14,13 @@ export default function SingleProduct() {
     }, [])
 
     // Quantity functions
-
     const slctQuantity = () => {
-        let quantityValue = document.querySelector("#quantityValue")
         let title = document.querySelector("#title").innerHTML
         let price = Number(document.querySelector("#price").innerHTML)
         let img = document.querySelector("#img").getAttribute("src")
+        let quantityValue = document.querySelector("#quantityValue")
         if (Number(quantityValue.value) <= 0) {
-            quantityValue.value = 1
+            setQuantity(1)
         } else {
             setQuantity(Number(quantityValue.value))
             setTitle(title)
@@ -60,7 +59,7 @@ export default function SingleProduct() {
                                     <div className="card-body w-50">
                                         <div className="input-group gap-2 align-items-center border justify-content-center">
                                             <span>{(value.price * quantity).toFixed(2)}$</span>
-                                            <input onChange={slctQuantity} type="number" className="form-control mr-sm-2" id="quantityValue" />
+                                            <input onChange={slctQuantity} type="number" value={quantity} className="form-control mr-sm-2" id="quantityValue" />
                                         </div>
                                         <div className="input-group gap-2 align-items-center justify-content-center">
                                             <button onClick={AddToCard} className="btn btn-outline-dark mt-auto">Add To Card</button>
