@@ -24,7 +24,7 @@ export default function Card() {
                                 <div className="row w-100">
                                     <div className="col-lg-7 w-100">
                                         <hr />
-                                        <div className="d-flex justify-content-between align-items-center mb-4">
+                                        <div className="d-flex justify-content-between align-items-center mb-4 flex-direction-column">
                                             <div>
                                                 <p className="mb-1">Shopping cart</p>
                                                 <p className="mb-0">You have {state.length} items in your cart</p>
@@ -37,8 +37,8 @@ export default function Card() {
                                             <div className="card-body w-100 d-flex flex-column gap-5">
                                                 {
                                                     state.map(val => {
-                                                        return <div className="d-flex justify-content-between">
-                                                            <div className="d-flex flex-row align-items-center">
+                                                        return <div className="d-flex justify-content-between selectedProd">
+                                                            <div className="d-flex flex-row align-items-center topInfosProd">
                                                                 <div>
                                                                     <img
                                                                         src={val.img}
@@ -48,9 +48,9 @@ export default function Card() {
                                                                     <h5>{val.title}</h5>
                                                                 </div>
                                                             </div>
-                                                            <div className="d-flex flex-row align-items-center">
+                                                            <div className="d-flex flex-row align-items-center quantitySlct">
                                                                 <div style={{ width: '50px' }}>
-                                                                    <h5 className="fw-normal mb-0">{val.quantity}</h5>
+                                                                    <h5 className="fw-normal mb-0 quantity">{val.quantity}</h5>
                                                                 </div>
                                                                 <div style={{ width: '80px' }}>
                                                                     <h5 className="mb-0">{val.price * val.quantity}$</h5>

@@ -4,8 +4,9 @@ export const CardSlice = createSlice({
     name: "CardSlice",
     reducers: {
         toCard: (state, action) => {
-            const displatState = state.map(val => val)
-            const getId = displatState.map(val => val.id)
+            const displayState = state.map(val => val)
+            const getId = displayState.map(val => val.id)
+            console.log(action.payload)
             if (!(getId.includes(action.payload.id) && action.payload)) {
                 return [...state, action.payload]
             }

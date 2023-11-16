@@ -12,30 +12,33 @@ export default function SingleProduct() {
     useEffect(() => {
         fetch("https://fakestoreapi.com/products").then((respons) => respons.json()).then((data) => setProduct(data))
     }, [])
-
-    // Quantity functions
     const slctQuantity = () => {
+        let quantityValue = document.querySelector("#quantityValue")
+        if (Number(quantityValue.value) <= 0) {
+            quantityValue.value = quantity
+        }
+        setQuantity(Number(quantityValue.value))
+    }
+    // send to add card
+    const dispatch = useDispatch()
+    const AddToCard = () => {
         let title = document.querySelector("#title").innerHTML
         let price = Number(document.querySelector("#price").innerHTML)
         let img = document.querySelector("#img").getAttribute("src")
         let quantityValue = document.querySelector("#quantityValue")
         if (Number(quantityValue.value) <= 0) {
-            setQuantity(1)
-        } else {
-            setQuantity(Number(quantityValue.value))
-            setTitle(title)
-            setPrice(price)
-            setImg(img)
+            quantityValue.value = quantity
+            console.log(`error: ${quantityValue.value}`);
         }
-    }
-    // send to add card
-    const dispatch = useDispatch()
-    const AddToCard = () => {
+        setQuantity(Number(quantityValue.value))
+        setTitle(title)
+        setPrice(price)
+        setImg(img)
         dispatch(toCard({ id: id, quantity: quantity, title: title, price: price, img: img }))
     }
     return (
-        <div classNameName="py-5 container">
-            <div className="row w-100 pt-4">
+        <div classNameName="py-5 singleProd">
+            <div className="row w-100 pt-4 container">
                 {
                     product.filter((value) => {
                         return value.id === Number(id)
@@ -56,7 +59,7 @@ export default function SingleProduct() {
                             <div className="col-lg-4">
                                 <div className="card mb-4">
                                     <div className="card-header">Product Infos</div>
-                                    <div className="card-body w-50">
+                                    <div className="card-body w-50 prodInfo d-flex flex-column gap-3">
                                         <div className="input-group gap-2 align-items-center border justify-content-center">
                                             <span>{(value.price * quantity).toFixed(2)}$</span>
                                             <input onChange={slctQuantity} type="number" value={quantity} className="form-control mr-sm-2" id="quantityValue" />

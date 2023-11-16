@@ -10,7 +10,7 @@ export default function Nav(props) {
         props.sendSearch(document.querySelector("#search").value)
     }
     return (
-        <nav className="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-light d-flex justify-content-center gap-3">
             {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button> */}
             <DropdownButton id="dropdown-basic-button" title="Select Category">
                 <Dropdown.Item><button onClick={sendCat} className="btn btn-outline-dark w-100 my-2 my-sm-0">ALL</button>
