@@ -55,8 +55,10 @@ export default function Card() {
                                                                 <div style={{ width: '80px' }}>
                                                                     <h5 className="mb-0">{val.price * val.quantity}$</h5>
                                                                 </div>
-                                                                <button onClick={dellProduct} id="trash" value={val.id}>remove</button>
-                                                                {/* <i onClick={dellProduct} id="trash" value={val.id} className="fas fa-trash-alt"></i> */}
+                                                                <button className="btn btn-outline-dark" type="submit" onClick={dellProduct} id="trash" value={val.id}>
+                                                                    <i className="bi-cart-fill me-1"></i>
+                                                                    Remove <i className="fas fa-trash-alt"></i>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     })
